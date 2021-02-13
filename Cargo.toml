@@ -1,5 +1,5 @@
 [package]
-name = "rii"
+name = "riimote"
 version = "0.1.0"
 authors = ["ubuntu"]
 edition = "2018"
@@ -7,6 +7,19 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+hidapi = { version = "1.2", default-features = false, features = ["linux-static-hidraw"] }
+bitflags = "1.2"
+
+tokio = { version = "1.0", features = ["time"] }
+futures = "0.3"
+bluez-async = "0.2"
+
+tracing = "0.1"
+
+[dev-dependencies]
 tokio = { version = "1.0", features = ["full"] }
-bluez = "0.3"
-funty = "=1.1.0"
+rand = "0.8"
+
+tracing-subscriber = "0.2"
+
+anyhow = "1.0"
