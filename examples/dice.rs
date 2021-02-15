@@ -7,7 +7,7 @@ use tracing::*;
 use std::time::Duration;
 use std::thread::sleep;
 
-use rii::*;
+use riimote::*;
 
 const DATA_REPORT_TYPE: u8 = Report::CoreButtonsAccelerometer as u8;
 
