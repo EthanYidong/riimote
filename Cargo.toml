@@ -1,8 +1,12 @@
 [package]
 name = "riimote"
+description = "Rust Wiimote library"
 version = "0.1.0"
-authors = ["ubuntu"]
+authors = ["EthanYidong <ethanyidong@gmail.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/EthanYidong/riimote"
+exclude = ["examples/media/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
