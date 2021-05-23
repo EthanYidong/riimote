@@ -51,7 +51,8 @@ impl WiimoteSearch {
     }
 
     pub async fn connect_to_wiimote(&self, wiimote: &DeviceId) -> Result<(), BluetoothError> {
-        let wiimote_info = self.session.get_device_info(wiimote).await?;
+        self.session.start_discovery().await?;
+	let wiimote_info = self.session.get_device_info(wiimote).await?;
         if !wiimote_info.connected {
             info!("Attempting to connect to wiimote");
             while let Err(_) = self.session.connect(wiimote).await {
@@ -61,6 +62,7 @@ impl WiimoteSearch {
         } else {
             info!("Already connected to wiimote");
         }
+	self.session.stop_discovery().await?;
         Ok(())
     }
 }
